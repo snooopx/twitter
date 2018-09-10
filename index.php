@@ -8,8 +8,6 @@
     $user = new Users();
     $twitter = new TwitterApi(CONSUMER_API_KEY, CONSUMER_API_SECRET, $access_token, $access_token_secret);
 
-    echo "<pre>";
-
     foreach($user->tw_users as $tw_user) {
 
         // Get user from DB

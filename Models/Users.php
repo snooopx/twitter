@@ -38,8 +38,12 @@ class Users {
             parse_str($url, $refresh_url);
 
             if(isset($refresh_url['since_id'])) {
+
                 return $refresh_url['since_id'];
             }
+
+        } else {
+            return false;
         }
     }
 
@@ -51,9 +55,11 @@ class Users {
 
             // Add new users to array
             if(!isset($mentioners[$s->user->screen_name])) {
+
                 $mentioners[$s->user->screen_name] = [];
                 $mentioners[$s->user->screen_name]['count'] = 1;
             } else {
+
                 $mentioners[$s->user->screen_name]['count']++;
             }
         }
